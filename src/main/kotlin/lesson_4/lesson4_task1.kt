@@ -1,4 +1,4 @@
-package org.example.lesson_3
+package org.example.lesson_4
 
 const val TOTAL_TABLES = 13
 
