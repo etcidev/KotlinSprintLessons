@@ -1,17 +1,16 @@
 package org.example.lesson_5
 
-const val MIN = 0
-const val MAX = 1
+const val MIN_NUMBER = 0
+const val MAX_NUMBER = 42
 
 fun main() {
 
-    val winNumber1 = (MIN..MAX).random()
-    val winNumber2 = (MIN..MAX).random()
+    val winNumber1 = (MIN_NUMBER..MAX_NUMBER).random()
+    val winNumber2 = (MIN_NUMBER..MAX_NUMBER).random()
     var userNumber1: Int? = null
     var userNumber2: Int? = null
 
     val winningNumbers = listOf(winNumber1, winNumber2)
-    println(winningNumbers)
 
     val winningNumbersCounts = winningNumbers.groupingBy { it }.eachCount()
 
@@ -42,9 +41,9 @@ fun main() {
         matchesCount += minOf(winCount, userCount)
     }
 
-    val result = if (matchesCount == 0) "Неудача!"
-    else if (matchesCount == 1) "Вы выиграли утешительный приз!"
-    else "Поздравляем! Вы выиграли главный приз!"
+    val result = if (matchesCount == 0) "Неудача! Загаданные числа $winNumber1 и $winNumber2"
+    else if (matchesCount == 1) "Вы выиграли утешительный приз! Загаданные числа $winNumber1 и $winNumber2"
+    else "Поздравляем! Вы выиграли главный приз! Загаданные числа $winNumber1 и $winNumber2"
 
     println(result)
 
