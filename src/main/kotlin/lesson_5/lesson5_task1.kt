@@ -1,7 +1,7 @@
 package org.example.lesson_5
 
-const val MIN = 1
-const val MAX = 100
+const val MIN_NUMBER = 1
+const val MAX_NUMBER = 100
 
 fun main() {
 
@@ -19,4 +19,4 @@ fun main() {
 }
 
 fun getRandomPair() =
-    (MIN..MAX).random() to (MIN..MAX).random()
+    (MIN_NUMBER..MAX_NUMBER).random() to (MIN_NUMBER..MAX_NUMBER).random()
