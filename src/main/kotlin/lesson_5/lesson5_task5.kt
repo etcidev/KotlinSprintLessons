@@ -4,7 +4,6 @@ const val MIN_VALUE = 0
 const val MAX_VALUE = 42
 const val WINNING_NUMBERS_COUNT = 3
 
-const val JACKPOT_MATCH_COUNT = 3
 const val BIG_PRIZE_MATCH_COUNT = 2
 const val CONSOLATION_PRIZE_MATCH_COUNT = 1
 
@@ -22,8 +21,8 @@ fun main() {
 
     val resultMessage = when (matchesCount) {
 
-        JACKPOT_MATCH_COUNT ->
-            "Вы угадали все $JACKPOT_MATCH_COUNT числа и выиграли джекпот!"
+        WINNING_NUMBERS_COUNT ->
+            "Вы угадали все $WINNING_NUMBERS_COUNT числа и выиграли джекпот!"
 
         BIG_PRIZE_MATCH_COUNT ->
             "Вы угадали $BIG_PRIZE_MATCH_COUNT числа и получаете крупный приз!"
