@@ -32,12 +32,10 @@ fun timer(seconds: Int) {
     var timeLeft = seconds
     println("Старт")
 
-    while (timeLeft >= 0) {
-        print("\rОсталось $timeLeft   ")
+    while (timeLeft > 0) {
         Thread.sleep(1000)
         timeLeft--
     }
-    println()
     println("Прошло $seconds секунд")
 
 }
