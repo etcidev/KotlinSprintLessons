@@ -1,12 +1,12 @@
 package org.example.lesson_5
 
-const val MIN_NUMBER = 0
-const val MAX_NUMBER = 42
+const val MIN_NUM = 0
+const val MAX_NUM = 42
 
 fun main() {
 
-    val winNumber1 = (MIN_NUMBER..MAX_NUMBER).random()
-    val winNumber2 = (MIN_NUMBER..MAX_NUMBER).random()
+    val winNumber1 = (MIN_NUM..MAX_NUM).random()
+    val winNumber2 = (MIN_NUM..MAX_NUM).random()
     var userNumber1: Int? = null
     var userNumber2: Int? = null
 
