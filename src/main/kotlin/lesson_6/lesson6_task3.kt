@@ -3,12 +3,12 @@ package org.example.lesson_6
 fun main() {
 
     println("Введите количество секунд")
-    val inputSeconds = readInt()
+    val inputSeconds = readIntSeconds()
     timer(inputSeconds)
 
 }
 
-fun readInt(): Int {
+fun readIntSeconds(): Int {
     while (true) {
 
         val inputSeconds = readln().toIntOrNull()
