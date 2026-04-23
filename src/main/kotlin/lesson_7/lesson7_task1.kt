@@ -1,21 +1,24 @@
 package org.example.lesson_7
 
-const val PASSWORD_PAIRS_COUNT = 3
+const val PASSWORD_COUNT = 6
 
 fun main() {
 
     val letters = 'a'..'z'
     val digits = '0'..'9'
 
-    val password = buildString {
+    var password = ""
 
-        repeat(PASSWORD_PAIRS_COUNT) {
-            append(letters.random())
-            append(digits.random())
+    for (i in 1..PASSWORD_COUNT) {
+
+        password += if (i % 2 == 0) {
+            digits.random()
+        } else {
+            letters.random()
         }
 
     }
-
     println(password)
-
 }
+
+
