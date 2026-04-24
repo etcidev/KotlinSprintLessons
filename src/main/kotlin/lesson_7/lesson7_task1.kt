@@ -1,6 +1,6 @@
 package org.example.lesson_7
 
-const val PASSWORD_COUNT = 6
+const val PASSWORD_SIZE = 6
 
 fun main() {
 
@@ -9,7 +9,7 @@ fun main() {
 
     var password = ""
 
-    for (i in 1..PASSWORD_COUNT) {
+    for (i in 1..PASSWORD_SIZE) {
 
         password += if (i % 2 == 0) {
             digits.random()
