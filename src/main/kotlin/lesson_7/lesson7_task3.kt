@@ -8,7 +8,7 @@ fun main() {
         println("Введите число")
         val input = readln().toIntOrNull()
 
-        if (input != null && input >= 0) {
+        if (input != null && input > 0) {
             userNumber = input
             break
         }
