@@ -14,9 +14,7 @@ fun main() {
         }
     }
 
-    var i = 0
-    while (i <= userNumber) {
+    for (i in 0..userNumber step 2) {
         print("$i ")
-        i += 2
     }
 }
