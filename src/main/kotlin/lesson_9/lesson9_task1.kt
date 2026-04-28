@@ -4,7 +4,7 @@ fun main() {
 
     val ingredients = listOf("вода", "голова летучей мыши", "эссенция из шкуры жопы дракона")
 
-    println("В рецепте есть следующие ингредиенты: ${ingredients.joinToString(", ")}")
+    println("В рецепте есть следующие ингредиенты:")
 
     ingredients.forEach {
         println(it)
