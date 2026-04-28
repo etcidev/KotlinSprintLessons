@@ -6,20 +6,19 @@ fun main() {
 
     val ingredients = mutableListOf("вода", "голова летучей мыши", "эссенция из шкуры жопы дракона")
 
-    println("В рецепте есть базовые ингредиенты: ${ingredients.joinToString(", ")}")
+    println("В рецепте есть базовые ингредиенты:")
+    ingredients.forEach { println(it) }
 
-    println("Желаете добавить еще?")
+    println("Желаете добавить ещё?")
 
-    val userAnswer = readln().trim()
+    if (readln().trim().equals(CONFIRM_YES, true)) {
 
-    if (!userAnswer.equals(CONFIRM_YES, true)) return
+        println("Какой ингредиент вы хотите добавить?")
 
-    println("Какой ингредиент вы хотите добавить?")
+        ingredients.add(readln().trim())
 
-    val ingredientToAdd = readln().trim()
-
-    ingredients.add(ingredientToAdd)
-
-    println("Теперь в рецепте есть следующие ингредиенты: ${ingredients.joinToString(", ")}")
+        println("Теперь в рецепте есть следующие ингредиенты:")
+        ingredients.forEach { println(it) }
+    }
 
 }
