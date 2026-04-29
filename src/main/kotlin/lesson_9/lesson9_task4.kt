@@ -4,28 +4,20 @@ const val INGREDIENTS_COUNT = 5
 
 fun main() {
 
-    val ingredients: List<String>
-
     println("Введите $INGREDIENTS_COUNT ингредиентов через запятую")
 
-    while (true) {
+    val ingredients = readln().split(", ")
 
-        val input = readln()
-
-        val parsed = input.split(",")
-            .map { it.trim() }
-            .filter { it.isNotEmpty() }
-
-        if (parsed.size == INGREDIENTS_COUNT) {
-            ingredients = parsed
-            break
-        }
-
-        println("Введите ровно $INGREDIENTS_COUNT ингредиентов через запятую")
+    if (ingredients.size != INGREDIENTS_COUNT) {
+        println("Ошибка: нужно ввести ровно $INGREDIENTS_COUNT ингредиентов")
+        return
     }
 
-    ingredients.sorted().forEach {
-        println(it)
+    if (ingredients.any { it.isBlank() }) {
+        println("Ошибка: ингредиенты не должны быть пустыми")
+        return
     }
+
+    println(ingredients.sorted().joinToString(", "))
 
 }
