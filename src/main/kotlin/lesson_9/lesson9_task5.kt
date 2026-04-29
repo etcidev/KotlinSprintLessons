@@ -1,36 +1,29 @@
 package org.example.lesson_9
 
+const val INGREDIENTS_COUNT = 5
+
 fun main() {
+    val ingredients = mutableSetOf<String>()
 
-    val ingredients = mutableListOf<String>()
-
-    var i = 1
-
-    while (i <= 5) {
-
-        println("Введите ингредиент №$i")
-
+    while (ingredients.size < INGREDIENTS_COUNT) {
+        println("Введите ингредиент №${ingredients.size + 1}")
         val input = readln().trim().lowercase()
 
         if (input.isBlank()) {
-
             println("Вы ничего не ввели")
             continue
         }
-        if (input in ingredients) {
+
+        if (!ingredients.add(input)) {
             println("Такой ингредиент уже есть")
-            continue
         }
-
-        ingredients.add(input)
-
-        i++
-
     }
 
-    val sortedIngredients = ingredients.sorted().toMutableList()
-    sortedIngredients[0] = sortedIngredients[0].replaceFirstChar { it.uppercase() }
-
-    println(sortedIngredients.joinToString(", "))
+    println(
+        ingredients
+            .sorted()
+            .joinToString(", ")
+            .replaceFirstChar { it.uppercase() }
+    )
 
 }
