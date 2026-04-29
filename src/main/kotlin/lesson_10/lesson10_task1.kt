@@ -4,17 +4,14 @@ const val MIN_DICE_VALUE = 1
 const val MAX_DICE_VALUE = 6
 
 fun main() {
-
     println("Игра началась!")
 
-    val playerRoll = rollDice()
-
     println("Игрок бросает кость...")
+    val playerRoll = rollDice()
     println("Выпало: $playerRoll")
 
-    val computerRoll = rollDice()
-
     println("Компьютер бросает кость...")
+    val computerRoll = rollDice()
     println("Выпало: $computerRoll")
 
     when {
@@ -22,7 +19,6 @@ fun main() {
         playerRoll < computerRoll -> println("Победила машина")
         else -> println("Победила дружба")
     }
-
 }
 
-fun rollDice() = (MIN_DICE_VALUE..MAX_DICE_VALUE).random()
+fun rollDice(): Int = (MIN_DICE_VALUE..MAX_DICE_VALUE).random()
