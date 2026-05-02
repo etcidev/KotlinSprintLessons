@@ -5,15 +5,9 @@ const val USER_PASSWORD = "ф Бабруйск"
 const val ACCESS_TOKEN_LENGTH = 32
 
 fun main() {
-    val cartItems = listOf("Хлеб", "Молоко", "Яйца")
 
-    println("Введите логин")
-    val inputLogin = readln()
-    println("Введите пароль")
-    val inputPassword = readln()
-
-    val token = authenticate(login = inputLogin, password = inputPassword)
-    val cart = getCart(token, cartItems)
+    val token = authenticate(login = USER_LOGIN, password = USER_PASSWORD)
+    val cart = getCart(token)
 
     if (cart != null) {
         println(cart.joinToString(", "))
@@ -32,5 +26,9 @@ fun generateToken(): String {
 fun authenticate(login: String, password: String): String? =
     if (login == USER_LOGIN && password == USER_PASSWORD) generateToken() else null
 
-fun getCart(accessToken: String?, cartItems: List<String>): List<String>? =
-    accessToken?.let { cartItems }
+fun getCart(accessToken: String?): List<String>? {
+    val cartItems = listOf("Хлеб", "Молоко", "Яйца")
+    return accessToken?.let { cartItems }
+}
+
+
