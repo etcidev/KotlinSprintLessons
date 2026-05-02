@@ -1,7 +1,7 @@
 package org.example.lesson_10
 
-const val MIN_DICE_VALUE = 1
-const val MAX_DICE_VALUE = 6
+const val MIN_DICE = 1
+const val MAX_DICE = 6
 const val ANSWER_YES = "да"
 
 fun main() {
@@ -23,7 +23,7 @@ fun main() {
     }
 }
 
-fun rollDice(): Int = (MIN_DICE_VALUE..MAX_DICE_VALUE).random()
+fun rollDice(): Int = (MIN_DICE..MAX_DICE).random()
 
 fun playRound(): Boolean {
     println("Игрок бросает кость...")

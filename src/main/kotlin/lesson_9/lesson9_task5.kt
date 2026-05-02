@@ -1,11 +1,11 @@
 package org.example.lesson_9
 
-const val INGREDIENTS_COUNT = 5
+const val TOTAL_INGREDIENT_COUNT = 5
 
 fun main() {
     val ingredients = mutableSetOf<String>()
 
-    while (ingredients.size < INGREDIENTS_COUNT) {
+    while (ingredients.size < TOTAL_INGREDIENT_COUNT) {
         println("Введите ингредиент №${ingredients.size + 1}")
         val input = readln().trim().lowercase()
 

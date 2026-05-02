@@ -7,11 +7,11 @@ fun main() {
     println("Игра началась!")
 
     println("Игрок бросает кость...")
-    val playerRoll = rollDice()
+    val playerRoll = rollGameDice()
     println("Выпало: $playerRoll")
 
     println("Компьютер бросает кость...")
-    val computerRoll = rollDice()
+    val computerRoll = rollGameDice()
     println("Выпало: $computerRoll")
 
     when {
@@ -21,4 +21,4 @@ fun main() {
     }
 }
 
-fun rollDice(): Int = (MIN_DICE_VALUE..MAX_DICE_VALUE).random()
+fun rollGameDice(): Int = (MIN_DICE_VALUE..MAX_DICE_VALUE).random()
