@@ -7,7 +7,6 @@ class WeatherForecast(
     nightTemperatureKelvin: Int,
     isPrecipitationExpected: Boolean,
 ) {
-
     val dailyTemperature = dailyTemperatureKelvin - KELVIN_OFFSET
     val nightTemperature = nightTemperatureKelvin - KELVIN_OFFSET
     val isPrecipitationExpected = isPrecipitationExpected
