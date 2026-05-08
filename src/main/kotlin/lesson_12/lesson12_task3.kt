@@ -9,14 +9,14 @@ class WeatherForecast(
 ) {
     val dailyTemperature = dailyTemperatureKelvin - KELVIN_OFFSET
     val nightTemperature = nightTemperatureKelvin - KELVIN_OFFSET
-    val isPrecipitationExpected = isPrecipitationExpected
+    val hasPrecipitation = isPrecipitationExpected
 
     fun printWeather() {
         println(
             """
             Дневная температура: $dailyTemperature °C
             Ночная температура: $nightTemperature °C
-            Осадки: $isPrecipitationExpected
+            Осадки: $hasPrecipitation
             """.trimIndent()
         )
     }
