@@ -5,11 +5,10 @@ const val KELVIN_OFFSET = 273
 class DailyForecast(
     dailyTemperatureKelvin: Int,
     nightTemperatureKelvin: Int,
-    isPrecipitationExpected: Boolean,
+    val isPrecipitationExpected: Boolean,
 ) {
     val dailyTemperature = dailyTemperatureKelvin - KELVIN_OFFSET
     val nightTemperature = nightTemperatureKelvin - KELVIN_OFFSET
-    val isPrecipitationExpected = isPrecipitationExpected
 
     init {
         println(
