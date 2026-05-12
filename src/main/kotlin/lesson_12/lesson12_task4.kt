@@ -1,14 +1,14 @@
 package org.example.lesson_12
 
-const val KELVIN_OFFSET = 273
+const val KELV_OFFSET = 273
 
 class DailyForecast(
     dailyTemperatureKelvin: Int,
     nightTemperatureKelvin: Int,
     val isPrecipitationExpected: Boolean,
 ) {
-    val dailyTemperature = dailyTemperatureKelvin - KELVIN_OFFSET
-    val nightTemperature = nightTemperatureKelvin - KELVIN_OFFSET
+    val dailyTemperature = dailyTemperatureKelvin - KELV_OFFSET
+    val nightTemperature = nightTemperatureKelvin - KELV_OFFSET
 
     init {
         println(
