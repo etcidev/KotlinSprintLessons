@@ -2,7 +2,7 @@ package org.example.lesson_12
 
 const val KELV_OFFSET = 273
 
-class DailyForecast(
+class ForecastDaily(
     dailyTemperatureKelvin: Int,
     nightTemperatureKelvin: Int,
     val isPrecipitationExpected: Boolean,
@@ -22,7 +22,7 @@ class DailyForecast(
 }
 
 fun main() {
-    DailyForecast(
+    ForecastDaily(
         dailyTemperatureKelvin = 300,
         nightTemperatureKelvin = 280,
         isPrecipitationExpected = true,
