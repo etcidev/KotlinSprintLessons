@@ -13,7 +13,6 @@ abstract class Figure(
 class Circle(color: String, val radius: Double) : Figure(color) {
     override fun perimeter(): Double = 2 * Math.PI * radius
     override fun area(): Double = Math.PI * radius * radius
-
 }
 
 class Rectangle(color: String, val width: Double, val height: Double) : Figure(color) {
