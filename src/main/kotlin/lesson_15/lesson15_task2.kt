@@ -17,10 +17,10 @@ class PrecipitationAmount(
 class WeatherServer {
 
     fun sendMessage(stats: WeatherStationStats) {
-        if (stats is Temperature) {
-            println("Температура в городе ${stats.city}: ${stats.temperature}°C")
-        } else if (stats is PrecipitationAmount) {
-            println("Количество осадков в городе ${stats.city}: ${stats.precipitationAmount} мм")
+        when (stats) {
+            is Temperature -> println("Температура в городе ${stats.city}: ${stats.temperature}°C")
+            is PrecipitationAmount -> println("Количество осадков в городе ${stats.city}: ${stats.precipitationAmount} мм")
+            else -> println("Ошибка. Попробуйте позже.")
         }
     }
 }
