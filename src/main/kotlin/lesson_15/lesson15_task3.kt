@@ -1,33 +1,20 @@
 package org.example.lesson_15
 
-interface Readable {
-    fun readForum()
-}
-
-interface Postable {
-    fun postMessage(text: String)
-}
-
-interface Moderatable {
-    fun deleteMessage(author: User, message: String)
-    fun deleteUser(user: User)
-}
-
 abstract class User(
-    val name: String,
-) : Readable, Postable {
-    override fun readForum() = println("$name читает...")
-    override fun postMessage(text: String) = println("$name написал сообщение: \n\t$text")
+    val name: String
+) {
+    fun readForum() = println("$name читает...")
+    fun postMessage(text: String) = println("$name написал сообщение: \n\t$text")
 }
 
 class RegularUser(name: String) : User(name)
 
-class AdminUser(name: String) : User(name), Moderatable {
-    override fun deleteMessage(author: User, message: String) {
+class AdminUser(name: String) : User(name) {
+    fun deleteMessage(author: User, message: String) {
         println("Администратор $name удалил сообщение пользователя ${author.name}: \n\t$message")
     }
 
-    override fun deleteUser(user: User) {
+    fun deleteUser(user: User) {
         println("Администратор $name удалил пользователя ${user.name}")
     }
 }
