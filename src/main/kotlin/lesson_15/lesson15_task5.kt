@@ -1,7 +1,7 @@
 package org.example.lesson_15
 
 interface Movable {
-    fun move(name: String) = println("$name едет")
+    fun move()
 }
 
 interface PassengerTransportable {
@@ -85,10 +85,12 @@ interface CargoTransportable {
 
 abstract class Car(
     val name: String,
-) : Movable
+) : Movable {
+    override fun move() = println("$name едет")
+}
 
 class Truck(
-    name: String,
+    name: String = "Грузовик",
     override val maxCargoCapacity: Int = 2,
 ) : Car(name), PassengerTransportable, CargoTransportable {
 
@@ -100,7 +102,7 @@ class Truck(
 }
 
 class PassengerCar(
-    name: String,
+    name: String = "Легковая машина",
 ) : Car(name), PassengerTransportable {
 
     override val maxNumberPassengers = 3
@@ -110,9 +112,9 @@ class PassengerCar(
 
 fun main() {
 
-    val truck = Truck("Грузовик")
+    val truck = Truck()
 
-    truck.move(truck.name)
+    truck.move()
 
     truck.loadPassengers(1)
     truck.loadCargo(2)
@@ -122,18 +124,26 @@ fun main() {
 
     truck.unloadPassengers(1)
     truck.unloadCargo(1)
-
     println()
 
-    val passengerCar = PassengerCar("Легковая машина")
+    val passengerCar1 = PassengerCar()
 
-    passengerCar.move(passengerCar.name)
+    passengerCar1.move()
 
-    passengerCar.loadPassengers(3)
+    passengerCar1.loadPassengers(3)
+    println("Пассажиров внутри: ${passengerCar1.numberPassengersInside}")
 
-    println("Пассажиров внутри: ${passengerCar.numberPassengersInside}")
+    passengerCar1.unloadPassengers(2)
+    println("Пассажиров внутри: ${passengerCar1.numberPassengersInside}")
+    println()
 
-    passengerCar.unloadPassengers(2)
+    val passengerCar2 = PassengerCar()
 
-    println("Пассажиров внутри: ${passengerCar.numberPassengersInside}")
+    passengerCar2.move()
+
+    passengerCar2.loadPassengers(2)
+    println("Пассажиров внутри: ${passengerCar2.numberPassengersInside}")
+
+    passengerCar2.unloadPassengers(2)
+    println("Пассажиров внутри: ${passengerCar2.numberPassengersInside}")
 }
