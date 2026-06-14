@@ -1,4 +1,4 @@
-package org.example
+package org.example.lesson_16
 
 class Dice {
     private val value = (1..6).random()
